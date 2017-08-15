@@ -127,7 +127,18 @@ public class TicTacToe extends JApplet implements ActionListener{
 				winnerO = false;
 			
 		}//End of result Function
-		
+		public void disableAllButtons(){ //Disable all buttons when the winner is decided or if it's a tie
+			b1.setEnabled(false);
+			b2.setEnabled(false);
+			b3.setEnabled(false);
+			b4.setEnabled(false);
+			b5.setEnabled(false);
+			b6.setEnabled(false);
+			b7.setEnabled(false);
+			b8.setEnabled(false);
+			b9.setEnabled(false);
+		}//End of disableAllButtons Function
+	
 		public void reset(){//Resetting the buttons for another round
 			count = 0;
 			letter = "";
@@ -206,39 +217,15 @@ public class TicTacToe extends JApplet implements ActionListener{
 			
 			if(winnerX == true){
 				result.setText("The Winner is X / Player 1");
-				b1.setEnabled(false);
-				b2.setEnabled(false);
-				b3.setEnabled(false);
-				b4.setEnabled(false);
-				b5.setEnabled(false);
-				b6.setEnabled(false);
-				b7.setEnabled(false);
-				b8.setEnabled(false);
-				b9.setEnabled(false);
+				disableAllButtons()
 			}
 			else if(winnerO == true){
 				result.setText("The Winner is O / Player 2");
-				b1.setEnabled(false);
-				b2.setEnabled(false);
-				b3.setEnabled(false);
-				b4.setEnabled(false);
-				b5.setEnabled(false);
-				b6.setEnabled(false);
-				b7.setEnabled(false);
-				b8.setEnabled(false);
-				b9.setEnabled(false);
+				disableAllButtons()
 			}
 			else if(count == 9 && winnerO == false && winnerX == false){
 				result.setText("It is a Tie");
-				b1.setEnabled(false);
-				b2.setEnabled(false);
-				b3.setEnabled(false);
-				b4.setEnabled(false);
-				b5.setEnabled(false);
-				b6.setEnabled(false);
-				b7.setEnabled(false);
-				b8.setEnabled(false);
-				b9.setEnabled(false);
+				disableAllButtons()
 			}
 			 
 			if(obj == startover){
